@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="./css/main.css">
+		<title>アンケート</title>
+	</head>
+	<body>   
+        <!-- <div class="cover">
+            <div class="spinner-border text-danger" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>          -->
+        <header class="position-absolute l-0 t-0 w-100 h-100 z--1 overflow-hidden">
+            <img class="img img1 position-absolute b-0 hide-img" src="./images/1.png" alt="">
+            <img class="img img2 position-absolute b-0 hide-img" src="./images/2.png" alt="">
+            <img class="img img3 position-absolute b-0 hide-img" src="./images/3.png" alt="">
+            <img class="img img4 position-absolute b-0 hide-img" src="./images/4.png" alt="">
+            <img class="img img5 position-absolute b-0 hide-img" src="./images/5.png" alt="">
+            <img class="img img6 position-absolute b-0 hide-img" src="./images/6.png" alt="">
+            <img class="img img7 position-absolute b-0 hide-img" src="./images/7.png" alt="">
+        </header>
+        <div class="position-fixed top-0 start-0 z-1">
+           <div class="progress">
+            <div class="progress-bar bg-info" role="progressbar"></div>
+           </div>
+        </div>
+        <nav class="position-fixed bottom-0 end-0 z-1 bottom-pos">
+            <div class="btn btn-info btn-prev">上一步</div>
+            <div class="btn btn-warning btn-send">送出</div>
+            <div class="btn btn-info btn-next">下一步</div>
+        </nav>
+        <section>
+            <div class="container">                
+                <article id="article1" class="article article1 ">
+                    <div class="title h-100 d-flex flex-column justify-content-center">
+                        <h1 class="w-75 m-auto my-4 fz-40">「Scorch_earth_Sojourner」回饋問卷</h1>
+                        <h5 class="w-75 m-auto my-4">非常感謝您遊玩本作「Scorch_earth_Sojourner」，為了讓遊戲體驗更加愉快以及作為下個作品的參考，我們有一些問題需要您的填寫，非常感謝！</h5>
+                    </div>
+                </article>
+                <article id="article2" class="article article2">
+                    <h3>一、基本資料</h3>
+
+                    <div class="input-group my-4">
+                        <label class="input-group-text" for="user-gender">性別</label>
+                        <select class="form-select" name="user-gender" id="user-gender">
+                            <option selected disable selected value hidden>請選擇</option>
+                            <option value="男">男</option>
+                            <option value="女">女</option>
+                            <option value="不公開">不公開</option>
+                        </select>
+                    </div>
+                    
+                    <div class="input-group my-4">
+                        <label class="input-group-text" for="user-age">年齡</label>
+                        <select class="form-select" name="user-age" id="user-age">
+                            <option selected disable selected value hidden>請選擇</option>
+                            <option value="12歲(含)以下">12歲(含)以下</option>
+                            <option value="13歲 ~ 18歲">13歲 ~ 18歲</option>
+                            <option value="19歲 ~ 24歲">19歲 ~ 24歲</option>
+                            <option value="25歲 ~ 30歲">25歲 ~ 30歲</option>
+                            <option value="30歲以上">30歲以上</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group my-4">
+                        <span class="input-group-text">email</span>
+                        <input type="text" class="form-control" id="email" name="email" placeholder="">
+                    </div>     
+
+                </article>
+                <article id="article3" class="article article3">
+                    <h3>二、整體內容相關</h3>
+
+                    <p class="my-1">您是透過何種管道得知本遊戲的？（可複選）</p>
+                    <div class="input-group flex-fill flex-column bg-white my-3">
+                        <div class="input-group">
+                            <div class="input-group-text bg-white">
+                                <input type="checkbox" class="form-check-input mt-0" name="game-getinfo" id="game-getinfod-1" value="店家海報">
+                            </div>
+                            <label class="input-group-text flex-fill" for="game-getinfo-1">店家海報</label>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-text bg-white">
+                                <input type="checkbox" class="form-check-input mt-0" name="game-getinfo" id="game-getinfo-2" value="官網、官方宣傳廣告">
+                            </div>
+                            <label class="input-group-text flex-fill" for="game-getinfo-2">官網、官方宣傳廣告</label>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-text bg-white">
+                                <input type="checkbox" class="form-check-input mt-0" name="game-getinfo" id="game-getinfo-3" value="網路情報">
+                            </div>
+                            <label class="input-group-text flex-fill" for="game-getinfo-3">網路情報</label>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-text bg-white">
+                                <input type="checkbox" class="form-check-input mt-0" name="game-getinfo" id="game-getinfo-4" value="雜誌、報紙、廣告">
+                            </div>
+                            <label class="input-group-text flex-fill" for="game-getinfo-4">雜誌、報紙、廣告</label>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-text bg-white">
+                                <input type="checkbox" class="form-check-input mt-0" name="game-getinfo" id="game-getinfo-5" value="友人介紹">
+                            </div>
+                            <label class="input-group-text flex-fill" for="game-getinfo-5">友人介紹</label>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-text bg-white">
+                                <input type="checkbox" class="form-check-input mt-0" name="game-getinfo" id="game-getinfo-6" value="其他">
+                            </div>
+                            <label class="input-group-text" for="game-getinfo-6">其他</label>
+                            <input type="text" class="form-control" id="game-getinfo-6-text" name="game-getinfo-6-text" placeholder="請詳述，謝謝">
+                        </div>
+                    </div>
+
+                    <p class="my-1">吸引您遊玩本遊戲的最大契機為何？</p>
+                    <div class="input-group flex-column my-3">
+                        <div class="input-group">
+                            <div class="input-group-text bg-white">
+                                <input class="form-check-input mt-0" id="game-attract-1" type="radio" name="game-attract" value="遊戲開發商">
+                            </div>
+                            <label class="input-group-text flex-fill" for="game-attract-1">遊戲開發商</label>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-text bg-white">
+                                <input class="form-check-input mt-0" id="game-attract-2" type="radio" name="game-attract" value="PV動畫">
+                            </div>
+                            <label class="input-group-text flex-fill" for="game-attract-2">PV動畫</label>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-text bg-white">
+                                <input class="form-check-input mt-0" id="game-attract-3" type="radio" name="game-attract" value="角色設計">
+                            </div>
+                            <label class="input-group-text flex-fill" for="game-attract-3">角色設計</label>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-text bg-white">
+                                <input class="form-check-input mt-0" id="game-attract-4" type="radio" name="game-attract" value="劇情簡介">
+                            </div>
+                            <label class="input-group-text flex-fill" for="game-attract-4">劇情簡介</label>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-text bg-white">
+                                <input class="form-check-input mt-0" id="game-attract-5" type="radio" name="game-attract" value="遊戲玩法">
+                            </div>
+                            <label class="input-group-text flex-fill" for="game-attract-5">遊戲玩法</label>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-text bg-white">
+                                <input class="form-check-input mt-0" id="game-attract-6" type="radio" name="game-attract" value="友人介紹">
+                            </div>
+                            <label class="input-group-text flex-fill" for="game-attract-6">友人推薦</label>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-text bg-white">
+                                <input class="form-check-input mt-0" id="game-attract-7" type="radio" name="game-attract" value="其他">
+                            </div>
+                            <label class="input-group-text" for="game-attract-7">其他</label>
+                            <input type="text" class="form-control" id="game-attract-7-text" name="game-attract-7-text" placeholder="請詳述，謝謝">
+                        </div>
+                    </div>
+
+                </article>
+                <article id="article4" class="article article4">
+                    <h3>三、玩後心得</h3>
+                    <p>請評估您遊玩過後對本遊戲各方面的感想，1是最差，5是最佳。謝謝</p>
+
+                    <div class="input-group flex-fill">
+                        <p class="input-group-text flex-fill">1. 遊戲系統</p>
+                        <div class=" flex-fill flex-column bg-white">
+                            <div class="input-group flex-fill">
+                                <div class="input-group-text bg-white">
+                                    <input type="radio" class="form-check-input mt-0" name="game-system" id="game-system-1" value="1">
+                                </div>
+                                <label class="input-group-text flex-fill" for="game-system-1">1（非常不滿意）</label>
+                                <div class="input-group-text bg-white">
+                                    <input type="radio" class="form-check-input mt-0" name="game-system" id="game-system-2" value="2">
+                                </div>
+                                <label class="input-group-text flex-fill" for="game-system-2">2（不滿意）</label>
+                                <div class="input-group-text bg-white">
+                                    <input type="radio" class="form-check-input mt-0" name="game-system" id="game-system-3" value="3">
+                                </div>
+                                <label class="input-group-text flex-fill" for="game-system-3">3（普通）</label>
+                                <div class="input-group-text bg-white">
+                                    <input type="radio" class="form-check-input mt-0" name="game-system" id="game-system-4" value="4">
+                                </div>
+                                <label class="input-group-text flex-fill" for="game-system-4">4（滿意）</label>
+                                <div class="input-group-text bg-white">
+                                    <input type="radio" class="form-check-input mt-0" name="game-system" id="game-system-5" value="5">
+                                </div>
+                                <label class="input-group-text flex-fill" for="game-system-5">5（非常滿意）</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-group flex-fill">
+                        <p class="input-group-text flex-fill">2. 角色塑造</p>
+                        <div class="flex-fill flex-column bg-white">
+                            <div class="input-group flex-fill">
+                                <div class="input-group-text bg-white">
+                                    <input type="radio" class="form-check-input mt-0" name="game-character" id="game-character-1" value="1">
+                                </div>
+                                <label class="input-group-text flex-fill" for="game-character-1">1（非常不滿意）</label>
+                                <div class="input-group-text bg-white">
+                                    <input type="radio" class="form-check-input mt-0" name="game-character" id="game-character-2" value="2">
+                                </div>
+                                <label class="input-group-text flex-fill" for="game-character-2">2（不滿意）</label>
+                                <div class="input-group-text bg-white">
+                                    <input type="radio" class="form-check-input mt-0" name="game-character" id="game-character-3" value="3">
+                                </div>
+                                <label class="input-group-text flex-fill" for="game-character-3">3（普通）</label>
+                                <div class="input-group-text bg-white">
+                                    <input type="radio" class="form-check-input mt-0" name="game-character" id="game-character-4" value="4">
+                                </div>
+                                <label class="input-group-text flex-fill" for="game-character-4">4（滿意）</label>
+                                <div class="input-group-text bg-white">
+                                    <input type="radio" class="form-check-input mt-0" name="game-character" id="game-character-5" value="5">
+                                </div>
+                                <label class="input-group-text flex-fill" for="game-character-5">5（非常滿意）</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-group flex-fill">
+                        <p class="input-group-text flex-fill">3. 美術設計</p>
+                        <div class="flex-fill flex-column bg-white">
+                            <div class="input-group flex-fill">
+                                <div class="input-group-text bg-white">
+                                    <input type="radio" class="form-check-input mt-0" name="game-art" id="game-art-1" value="1">
+                                </div>
+                                <label class="input-group-text flex-fill" for="game-art-1">1（非常不滿意）</label>
+                                <div class="input-group-text bg-white">
+                                    <input type="radio" class="form-check-input mt-0" name="game-art" id="game-art-2" value="2">
+                                </div>
+                                <label class="input-group-text flex-fill" for="game-art-2">2（不滿意）</label>
+                                <div class="input-group-text bg-white">
+                                    <input type="radio" class="form-check-input mt-0" name="game-art" id="game-art-3" value="3">
+                                </div>
+                                <label class="input-group-text flex-fill" for="game-art-3">3（普通）</label>
+                                <div class="input-group-text bg-white">
+                                    <input type="radio" class="form-check-input mt-0" name="game-art" id="game-art-4" value="4">
+                                </div>
+                                <label class="input-group-text flex-fill" for="game-art-4">4（滿意）</label>
+                                <div class="input-group-text bg-white">
+                                    <input type="radio" class="form-check-input mt-0" name="game-art" id="game-art-5" value="5">
+                                </div>
+                                <label class="input-group-text flex-fill" for="game-art-5">5（非常滿意）</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-group flex-fill">
+                        <p class="input-group-text flex-fill">4. 世界觀　</p>
+                        <div class="flex-fill flex-column bg-white">
+                            <div class="input-group flex-fill">
+                                <div class="input-group-text bg-white">
+                                    <input type="radio" class="form-check-input mt-0" name="game-world" id="game-world-1" value="1">
+                                </div>
+                                <label class="input-group-text flex-fill" for="game-world-1">1（非常不滿意）</label>
+                                <div class="input-group-text bg-white">
+                                    <input type="radio" class="form-check-input mt-0" name="game-world" id="game-world-2" value="2">
+                                </div>
+                                <label class="input-group-text flex-fill" for="game-world-2">2（不滿意）</label>
+                                <div class="input-group-text bg-white">
+                                    <input type="radio" class="form-check-input mt-0" name="game-world" id="game-world-3" value="3">
+                                </div>
+                                <label class="input-group-text flex-fill" for="game-world-3">3（普通）</label>
+                                <div class="input-group-text bg-white">
+                                    <input type="radio" class="form-check-input mt-0" name="game-world" id="game-world-4" value="4">
+                                </div>
+                                <label class="input-group-text flex-fill" for="game-world-4">4（滿意）</label>
+                                <div class="input-group-text bg-white">
+                                    <input type="radio" class="form-check-input mt-0" name="game-world" id="game-world-5" value="5">
+                                </div>
+                                <label class="input-group-text flex-fill" for="game-world-5">5（非常滿意）</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-group flex-fill">
+                        <p class="input-group-text flex-fill">5. 遊戲玩法</p>
+                        <div class="flex-fill flex-column bg-white">
+                            <div class="input-group flex-fill">
+                                <div class="input-group-text bg-white">
+                                    <input type="radio" class="form-check-input mt-0" name="game-play" id="game-play-1" value="1">
+                                </div>
+                                <label class="input-group-text flex-fill" for="game-play-1">1（非常不滿意）</label>
+                                <div class="input-group-text bg-white">
+                                    <input type="radio" class="form-check-input mt-0" name="game-play" id="game-play-2" value="2">
+                                </div>
+                                <label class="input-group-text flex-fill" for="game-play-2">2（不滿意）</label>
+                                <div class="input-group-text bg-white">
+                                    <input type="radio" class="form-check-input mt-0" name="game-play" id="game-play-3" value="3">
+                                </div>
+                                <label class="input-group-text flex-fill" for="game-play-3">3（普通）</label>
+                                <div class="input-group-text bg-white">
+                                    <input type="radio" class="form-check-input mt-0" name="game-play" id="game-play-4" value="4">
+                                </div>
+                                <label class="input-group-text flex-fill" for="game-play-4">4（滿意）</label>
+                                <div class="input-group-text bg-white">
+                                    <input type="radio" class="form-check-input mt-0" name="game-play" id="game-play-5" value="5">
+                                </div>
+                                <label class="input-group-text flex-fill" for="game-play-5">5（非常滿意）</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-group flex-fill">
+                        <p class="input-group-text flex-fill">6. 音樂　　</p>
+                        <div class="flex-fill flex-column bg-white">
+                            <div class="input-group flex-fill">
+                                <div class="input-group-text bg-white">
+                                    <input type="radio" class="form-check-input mt-0" name="game-music" id="game-music-1" value="1">
+                                </div>
+                                <label class="input-group-text flex-fill" for="game-music-1">1（非常不滿意）</label>
+                                <div class="input-group-text bg-white">
+                                    <input type="radio" class="form-check-input mt-0" name="game-music" id="game-music-2" value="2">
+                                </div>
+                                <label class="input-group-text flex-fill" for="game-music-2">2（不滿意）</label>
+                                <div class="input-group-text bg-white">
+                                    <input type="radio" class="form-check-input mt-0" name="game-music" id="game-music-3" value="3">
+                                </div>
+                                <label class="input-group-text flex-fill" for="game-music-3">3（普通）</label>
+                                <div class="input-group-text bg-white">
+                                    <input type="radio" class="form-check-input mt-0" name="game-music" id="game-music-4" value="4">
+                                </div>
+                                <label class="input-group-text flex-fill" for="game-music-4">4（滿意）</label>
+                                <div class="input-group-text bg-white">
+                                    <input type="radio" class="form-check-input mt-0" name="game-music" id="game-music-5" value="5">
+                                </div>
+                                <label class="input-group-text flex-fill" for="game-music-5">5（非常滿意）</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-group flex-fill">
+                        <p class="input-group-text flex-fill">7. 劇情　　</p>
+                        <div class="flex-fill flex-column bg-white">
+                            <div class="input-group flex-fill">
+                                <div class="input-group-text bg-white">
+                                    <input type="radio" class="form-check-input mt-0" name="game-story" id="game-story-1" value="1">
+                                </div>
+                                <label class="input-group-text flex-fill" for="game-story-1">1（非常不滿意）</label>
+                                <div class="input-group-text bg-white">
+                                    <input type="radio" class="form-check-input mt-0" name="game-story" id="game-story-2" value="2">
+                                </div>
+                                <label class="input-group-text flex-fill" for="game-story-2">2（不滿意）</label>
+                                <div class="input-group-text bg-white">
+                                    <input type="radio" class="form-check-input mt-0" name="game-story" id="game-story-3" value="3">
+                                </div>
+                                <label class="input-group-text flex-fill" for="game-story-3">3（普通）</label>
+                                <div class="input-group-text bg-white">
+                                    <input type="radio" class="form-check-input mt-0" name="game-story" id="game-story-4" value="4">
+                                </div>
+                                <label class="input-group-text flex-fill" for="game-story-4">4（滿意）</label>
+                                <div class="input-group-text bg-white">
+                                    <input type="radio" class="form-check-input mt-0" name="game-story" id="game-story-5" value="5">
+                                </div>
+                                <label class="input-group-text flex-fill" for="game-story-5">5（非常滿意）</label>
+                            </div>
+                        </div>
+                    </div>
+
+                </article>
+                <article id="article5" class="article article5">
+                    <h3>四、關於之後的作品</h3>
+                    <p>這部分的回答會當作團隊開發下一作品的方向參考之一，請不吝於分享自己的想法，非常感謝。</p>
+                    
+                    <p class="my-3">喜歡的遊戲類型 (可複選)</p>
+                    <div class="input-group flex-fill flex-column bg-white">
+                        <div class="input-group flex-fill">
+                            <div class="input-group-text bg-white">
+                                <input type="checkbox" class="form-check-input mt-0" name="user-liketype" id="user-liketype-1" value="RPG">
+                            </div>
+                            <label class="input-group-text flex-fill" for="user-liketype-1">RPG</label>                        
+                       
+                            <div class="input-group-text bg-white">
+                                <input type="checkbox" class="form-check-input mt-0" name="user-liketype" id="user-liketype-2" value="動作">
+                            </div>
+                            <label class="input-group-text flex-fill" for="user-liketype-2">動作</label>                        
+                        
+                            <div class="input-group-text bg-white">
+                                <input type="checkbox" class="form-check-input mt-0" name="user-liketype" id="user-liketype-3" value="射擊">
+                            </div>
+                            <label class="input-group-text flex-fill" for="user-liketype-3">射擊</label>                        
+                        
+                            <div class="input-group-text bg-white">
+                                <input type="checkbox" class="form-check-input mt-0" name="user-liketype" id="user-liketype-4" value="冒險">
+                            </div>
+                            <label class="input-group-text flex-fill" for="user-liketype-4">冒險</label>                        
+                        
+                            <div class="input-group-text bg-white">
+                                <input type="checkbox" class="form-check-input mt-0" name="user-liketype" id="user-liketype-5" value="格鬥">
+                            </div>
+                            <label class="input-group-text flex-fill" for="user-liketype-5">格鬥</label>                        
+                        
+                            <div class="input-group-text bg-white">
+                                <input type="checkbox" class="form-check-input mt-0" name="user-liketype" id="user-liketype-6" value="模擬">
+                            </div>
+                            <label class="input-group-text flex-fill" for="user-liketype-6">模擬</label>                        
+                        
+                            <div class="input-group-text bg-white">
+                                <input type="checkbox" class="form-check-input mt-0" name="user-liketype" id="user-liketype-7" value="解謎">
+                            </div>
+                            <label class="input-group-text flex-fill" for="user-liketype-7">解謎</label>                        
+                       
+                            <div class="input-group-text bg-white">
+                                <input type="checkbox" class="form-check-input mt-0" name="user-liketype" id="user-liketype-8" value="其他">
+                            </div>
+                            <label class="input-group-text flex-fill" for="user-liketype-8">其他</label>                        
+                        
+                            <div class="input-group-text bg-white">
+                                <input type="checkbox" class="form-check-input mt-0" name="user-liketype" id="user-liketype-9" value="沒有特別喜好">
+                            </div>
+                            <label class="input-group-text flex-fill" for="user-liketype-9">沒有特別喜好</label>
+                        </div>
+                    </div>
+
+                    <p class="my-3">重視的遊戲要素 (可複選)</p>
+                    <div class="input-group flex-fill flex-column bg-white">                        
+                        <div class="input-group">
+                            <div class="input-group-text bg-white">
+                                <input type="checkbox" class="form-check-input mt-0" name="user-focus" id="user-focus-1" value="故事性">
+                            </div>
+                            <label class="input-group-text flex-fill" for="user-focus-1">故事性</label>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-text bg-white">
+                                <input type="checkbox" class="form-check-input mt-0" name="user-focus" id="user-focus-2" value="角色">
+                            </div>
+                            <label class="input-group-text flex-fill" for="user-focus-2">角色</label>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-text bg-white">
+                                <input type="checkbox" class="form-check-input mt-0" name="user-focus" id="user-focus-3" value="畫面流暢">
+                            </div>
+                            <label class="input-group-text flex-fill" for="user-focus-3">畫面流暢</label>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-text bg-white">
+                                <input type="checkbox" class="form-check-input mt-0" name="user-focus" id="user-focus-4" value="爽快感">
+                            </div>
+                            <label class="input-group-text flex-fill" for="user-focus-4">爽快感</label>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-text bg-white">
+                                <input type="checkbox" class="form-check-input mt-0" name="user-focus" id="user-focus-5" value="沉浸感">
+                            </div>
+                            <label class="input-group-text flex-fill" for="user-focus-5">沉浸感</label>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-text bg-white">
+                                <input type="checkbox" class="form-check-input mt-0" name="user-focus" id="user-focus-6" value="挑戰性">
+                            </div>
+                            <label class="input-group-text flex-fill" for="user-focus-6">挑戰性</label>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-text bg-white">
+                                <input type="checkbox" class="form-check-input mt-0" name="user-focus" id="user-focus-7" value="其他">
+                            </div>
+                            <label class="input-group-text" for="user-focus-7">其他</label>
+                            <input type="text" class="form-control" id="user-focus-7-text" name="user-focus-7-text" placeholder="請詳述，謝謝">
+                        </div>
+                    </div>
+
+                </article>
+                <article id="article6" class="article article6">
+                    <h3>五、其他</h3>
+                    <p>關於本遊戲的意見或感想</p>
+                    <div class="input-group mb-3">
+                        <textarea name="user-need-textarea-1" id="game-opinion-textarea" class="form-control hz-100" placeholder="（可自由填答）"></textarea>
+                    </div>
+                    <p>其他想法或建議</p>
+                    <div class="input-group mb-3">
+                        <textarea name="user-need-textarea-2" id="game-advice-textarea" class="form-control hz-100" placeholder="（可自由填答）"></textarea>
+                    </div>
+                </article>
+                <article id="article7" class="article article7">
+                    <div class=" h-100 w-100 d-flex justif-content-center align-items-center">
+                        <h1 class="thank-p w-100">謝謝您的填寫！ ٩(′ᗜ‵*)و</h1>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <footer>
+
+        </footer>
+
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+        <script src="./js/main.js"></script>
+	</body>
+</html>
