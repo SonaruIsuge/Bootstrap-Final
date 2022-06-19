@@ -1,4 +1,4 @@
-
+const url = 'https://script.google.com/macros/s/AKfycbxGa0RDg2RrgYeMk9OPumKrJY6oPcAhuAZBzwdHBYSqAlNcwEeH426SB9J7Dh9XCUcqzQ/exec';
 const pageNum = 7;
 let articleNum = 1;
 let articleNumDirty = false;
@@ -132,5 +132,64 @@ function switchToLastPage(){
 
 
 function postData(){
-    
+    activeLoadingAnimation(true);
+
+	let param = {};
+	param.method = 'write';
+    // 基本資料
+    param.userGender    = getSelectVal('user-gender');
+    param.userAge       = getSelectVal('user-age');
+    param.userEmail     = getInputVal('user-email');
+    // 整體內容相關
+    param.gameGetInfo   = getCheckboxVal('game-getinfo', 'game-getinfo-other');
+    param.gameAttract   = getCheckboxVal('game-attract', 'game-attract-other');
+    // 玩後心得
+    param.gameSystem    = getRadioVal('game-system');
+    param.gameCharacter = getRadioVal('game-character');
+    param.gameArt       = getRadioVal('game-art');
+    param.gameWorld     = getRadioVal('game-world');
+    param.gamePlay      = getRadioVal('game-play');
+    param.gameMusic     = getRadioVal('game-music');
+    param.gameStory     = getRadioVal('game-story');
+    //關於之後的作品
+    param.userLikeType  = getCheckboxVal('user-liketype');
+    param.userFocus     = getCheckboxVal('user-focus', 'user-focus-other');
+    // 其他
+    param.userOpinion = getTextAreaVal('user-opinion-textarea');
+    param.userAdvice = getTextAreaVal('user-advice-textarea');
+    console.log(param);
+    // send data to google sheet
+    $.post(url, param, function(data) {
+        activeLoadingAnimation(false);
+
+        if(data.result != 'sus')  alert('error', + data.msg);
+
+    }).fail(function(data){
+        activeLoadingAnimation(false);
+        alert('fail!');
+        
+    });
 }
+
+
+function activeLoadingAnimation(active){
+    $('.cover').css('display', `${active ? 'grid' :'none'}`);
+}
+
+
+getSelectVal = (name) => $(`select[name = ${name}]`).val();
+
+getInputVal = (name) => $(`input[name = ${name}]`).val();
+
+getCheckboxVal = (name, otherName = null) => {
+    let ary = [];
+    $(`input[name = ${name}]:checked`).each(function(index, element){
+        if($(this).val() == '其他' && otherName != null) ary.push($(this).val() + ":" + $(`input[name = ${otherName}]`).val());
+        else ary.push($(this).val());
+    })
+    return JSON.stringify(ary);
+}
+
+getRadioVal = (name) => $(`input[name = ${name}]:checked`).val();
+
+getTextAreaVal = (name) => $(`textarea[name = ${name}]`).val()
