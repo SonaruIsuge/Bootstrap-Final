@@ -9,11 +9,11 @@
 		<title>アンケート</title>
 	</head>
 	<body>   
-        <!-- <div class="cover">
+        <div class="cover">
             <div class="spinner-border text-danger" role="status">
                 <span class="visually-hidden">Loading...</span>
             </div>
-        </div>          -->
+        </div>
         <header class="position-absolute l-0 t-0 w-100 h-100 z--1 overflow-hidden">
             <img class="img img1 position-absolute b-0 hide-img" src="./images/1.png" alt="">
             <img class="img img2 position-absolute b-0 hide-img" src="./images/2.png" alt="">
@@ -44,7 +44,7 @@
                 <article id="article2" class="article article2">
                     <h3>一、基本資料</h3>
 
-                    <div class="input-group my-4">
+                    <div class="tip-check input-group my-4">
                         <label class="input-group-text" for="user-gender">性別</label>
                         <select class="form-select" name="user-gender" id="user-gender">
                             <option selected disable selected value hidden>請選擇</option>
@@ -54,7 +54,7 @@
                         </select>
                     </div>
                     
-                    <div class="input-group my-4">
+                    <div class="tip-check input-group my-4">
                         <label class="input-group-text" for="user-age">年齡</label>
                         <select class="form-select" name="user-age" id="user-age">
                             <option selected disable selected value hidden>請選擇</option>
@@ -66,7 +66,7 @@
                         </select>
                     </div>
 
-                    <div class="input-group my-4">
+                    <div class="tip-check input-group my-4">
                         <span class="input-group-text">email</span>
                         <input type="text" class="form-control" id="user-email" name="user-email" placeholder="">
                     </div>     
@@ -76,10 +76,10 @@
                     <h3>二、整體內容相關</h3>
 
                     <p class="my-1">您是透過何種管道得知本遊戲的？（可複選）</p>
-                    <div class="input-group flex-fill flex-column bg-white my-3">
+                    <div class="tip-check input-group flex-fill flex-column bg-white my-3">
                         <div class="input-group">
                             <div class="input-group-text bg-white">
-                                <input type="checkbox" class="form-check-input mt-0" name="game-getinfo" id="game-getinfod-1" value="店家海報">
+                                <input type="checkbox" class="form-check-input mt-0" name="game-getinfo" id="game-getinfo-1" value="店家海報">
                             </div>
                             <label class="input-group-text flex-fill" for="game-getinfo-1">店家海報</label>
                         </div>
@@ -107,7 +107,7 @@
                             </div>
                             <label class="input-group-text flex-fill" for="game-getinfo-5">友人介紹</label>
                         </div>
-                        <div class="input-group">
+                        <div class="tip-check input-group">
                             <div class="input-group-text bg-white">
                                 <input type="checkbox" class="form-check-input mt-0" name="game-getinfo" id="game-getinfo-6" value="其他">
                             </div>
@@ -117,7 +117,7 @@
                     </div>
 
                     <p class="my-1">吸引您遊玩本遊戲的最大契機為何？</p>
-                    <div class="input-group flex-column my-3">
+                    <div class="tip-check input-group flex-column my-3">
                         <div class="input-group">
                             <div class="input-group-text bg-white">
                                 <input class="form-check-input mt-0" id="game-attract-1" type="radio" name="game-attract" value="遊戲開發商">
@@ -154,7 +154,7 @@
                             </div>
                             <label class="input-group-text flex-fill" for="game-attract-6">友人推薦</label>
                         </div>
-                        <div class="input-group">
+                        <div class="tip-check input-group">
                             <div class="input-group-text bg-white">
                                 <input class="form-check-input mt-0" id="game-attract-7" type="radio" name="game-attract" value="其他">
                             </div>
@@ -168,8 +168,8 @@
                     <h3>三、玩後心得</h3>
                     <p>請評估您遊玩過後對本遊戲各方面的感想，1是最差，5是最佳。謝謝</p>
 
-                    <div class="input-group flex-fill">
-                        <p class="input-group-text flex-fill">1. 遊戲系統</p>
+                    <div class="tip-check input-group flex-fill mb-2r">
+                        <p class="input-group-text flex-fill m-0">1. 遊戲系統</p>
                         <div class=" flex-fill flex-column bg-white">
                             <div class="input-group flex-fill">
                                 <div class="input-group-text bg-white">
@@ -196,8 +196,8 @@
                         </div>
                     </div>
 
-                    <div class="input-group flex-fill">
-                        <p class="input-group-text flex-fill">2. 角色塑造</p>
+                    <div class="tip-check input-group flex-fill mb-2r">
+                        <p class="input-group-text flex-fill m-0">2. 角色塑造</p>
                         <div class="flex-fill flex-column bg-white">
                             <div class="input-group flex-fill">
                                 <div class="input-group-text bg-white">
@@ -224,8 +224,8 @@
                         </div>
                     </div>
 
-                    <div class="input-group flex-fill">
-                        <p class="input-group-text flex-fill">3. 美術設計</p>
+                    <div class="tip-check input-group flex-fill mb-2r">
+                        <p class="input-group-text flex-fill m-0">3. 美術設計</p>
                         <div class="flex-fill flex-column bg-white">
                             <div class="input-group flex-fill">
                                 <div class="input-group-text bg-white">
@@ -252,8 +252,8 @@
                         </div>
                     </div>
 
-                    <div class="input-group flex-fill">
-                        <p class="input-group-text flex-fill">4. 世界觀　</p>
+                    <div class="tip-check input-group flex-fill mb-2r">
+                        <p class="input-group-text flex-fill m-0">4. 世界觀　</p>
                         <div class="flex-fill flex-column bg-white">
                             <div class="input-group flex-fill">
                                 <div class="input-group-text bg-white">
@@ -280,8 +280,8 @@
                         </div>
                     </div>
 
-                    <div class="input-group flex-fill">
-                        <p class="input-group-text flex-fill">5. 遊戲玩法</p>
+                    <div class="tip-check input-group flex-fill mb-2r">
+                        <p class="input-group-text flex-fill m-0">5. 遊戲玩法</p>
                         <div class="flex-fill flex-column bg-white">
                             <div class="input-group flex-fill">
                                 <div class="input-group-text bg-white">
@@ -308,8 +308,8 @@
                         </div>
                     </div>
 
-                    <div class="input-group flex-fill">
-                        <p class="input-group-text flex-fill">6. 音樂　　</p>
+                    <div class="tip-check input-group flex-fill mb-2r">
+                        <p class="input-group-text flex-fill m-0">6. 音樂　　</p>
                         <div class="flex-fill flex-column bg-white">
                             <div class="input-group flex-fill">
                                 <div class="input-group-text bg-white">
@@ -336,8 +336,8 @@
                         </div>
                     </div>
 
-                    <div class="input-group flex-fill">
-                        <p class="input-group-text flex-fill">7. 劇情　　</p>
+                    <div class="tip-check input-group flex-fill mb-2r">
+                        <p class="input-group-text flex-fill m-0">7. 劇情　　</p>
                         <div class="flex-fill flex-column bg-white">
                             <div class="input-group flex-fill">
                                 <div class="input-group-text bg-white">
@@ -370,7 +370,7 @@
                     <p>這部分的回答會當作團隊開發下一作品的方向參考之一，請不吝於分享自己的想法，非常感謝。</p>
                     
                     <p class="my-3">喜歡的遊戲類型 (可複選)</p>
-                    <div class="input-group flex-fill flex-column bg-white">
+                    <div class="tip-check input-group flex-fill flex-column bg-white">
                         <div class="input-group flex-fill">
                             <div class="input-group-text bg-white">
                                 <input type="checkbox" class="form-check-input mt-0" name="user-liketype" id="user-liketype-1" value="RPG">
@@ -420,7 +420,7 @@
                     </div>
 
                     <p class="my-3">重視的遊戲要素 (可複選)</p>
-                    <div class="input-group flex-fill flex-column bg-white">                        
+                    <div class="tip-check input-group flex-fill flex-column bg-white">                        
                         <div class="input-group">
                             <div class="input-group-text bg-white">
                                 <input type="checkbox" class="form-check-input mt-0" name="user-focus" id="user-focus-1" value="故事性">
@@ -457,7 +457,7 @@
                             </div>
                             <label class="input-group-text flex-fill" for="user-focus-6">挑戰性</label>
                         </div>
-                        <div class="input-group">
+                        <div class="tip-check input-group">
                             <div class="input-group-text bg-white">
                                 <input type="checkbox" class="form-check-input mt-0" name="user-focus" id="user-focus-7" value="其他">
                             </div>
@@ -488,10 +488,17 @@
         <footer>
 
         </footer>
-
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
         <script src="./js/main.js"></script>
 	</body>
+
+    <template id="tipTemplate" style="display: none;">
+        <div class="tip">
+            <i class="fa fa-exclamation-circle"></i>
+            <span>這是一個必需要填的欄位</span>
+        </div>
+    </template>
+    
 </html>

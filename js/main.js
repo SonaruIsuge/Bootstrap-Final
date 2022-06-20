@@ -9,6 +9,31 @@ $(document).ready(function() {
     setSendBtn();
     setPageImage(1);
     BtnFunc();
+    activeLoadingAnimation(false);
+
+    let event_ary = ['input[type=text]'];
+    for(let i=0;i<event_ary.length;i++){
+        $(event_ary[i]).focusout(function(e){
+            if($(this).val() == ''){
+                setTip($(this));
+            }
+        });
+     
+        $(event_ary[i]).keyup(function(e){
+            if($(this).val() != ''){
+               removeTip($(this));
+            }
+        });
+    }
+    $('input[type=radio]').change(function(e) {
+        removeTip($(this));
+    });
+    $('select').change(function(e) {
+        removeTip($(this));
+    });
+    $('input[type=checkbox]').change(function(e) {
+        removeTip($(this));
+    });
 });
 
 
@@ -35,8 +60,8 @@ function BtnFunc(){
 function switchArticle(action){
 
     // prev: action = -1 , next: action = 1
-    updateArticleNumDirty(action);
-        
+    if(checkField(articleNum)) updateArticleNumDirty(action);
+    
     if(articleNumDirty){
         gsap.to('#article'+ lastPageNum, {
             duration: 0.5,
@@ -54,6 +79,7 @@ function switchArticle(action){
             duration: 0.5,
             x: 0
         });
+        articleNumDirty = false;
     }
     articleNum == 1 ? $('.btn-prev').hide() : $('.btn-prev').show();
     articleNum >= pageNum-1 ? $('.btn-next').hide() : $('.btn-next').show();
@@ -193,3 +219,101 @@ getCheckboxVal = (name, otherName = null) => {
 getRadioVal = (name) => $(`input[name = ${name}]:checked`).val();
 
 getTextAreaVal = (name) => $(`textarea[name = ${name}]`).val()
+
+
+function checkField(pn) {
+    let check = true;
+    switch(pn) {
+        case 2:
+            $('select').each(function(){
+                if($(this).val() == ''){
+                    setTip($('select'));
+                    check = false;
+                }
+            });
+            break;
+        case 3:
+            if($('input[name = game-getinfo]:checked').val() == undefined){
+                setTip($('#game-getinfo-1'));
+                check = false;
+            }
+            if($('input[name = game-getinfo]')[$('input[name = game-getinfo]').length - 1].checked && $('input[name = game-getinfo-other]').val() == ''){
+                setTip($('input[name = game-getinfo-other]'));
+                check = false;
+            }
+            if($('input[name = game-attract]:checked').val() == undefined){                
+                setTip($('#game-attract-1'));
+                check = false;
+            }
+            if($('input[name = game-attract]')[$('input[name = game-attract]').length - 1].checked && $('input[name = game-attract-other]').val() == ''){
+                setTip($('input[name = game-attract-other]'));
+                check = false;
+            }
+            break;
+        case 4:            
+            if($('input[name = game-system]:checked').val() == undefined){
+                setTip($('input[name = game-system]'));
+                check = false;
+            }
+            if($('input[name = game-character]:checked').val() == undefined){
+                setTip($('input[name = game-character]'));
+                check = false;
+            }
+            if($('input[name = game-art]:checked').val() == undefined){
+                setTip($('input[name = game-art]'));
+                check = false;
+            }
+            if($('input[name = game-world]:checked').val() == undefined){
+                setTip($('input[name = game-world]'));
+                check = false;
+            }
+            if($('input[name = game-play]:checked').val() == undefined){
+                setTip($('input[name = game-play]'));
+                check = false;
+            }
+            if($('input[name = game-music]:checked').val() == undefined){
+                setTip($('input[name = game-music]'));
+                check = false;
+            }
+            if($('input[name = game-story]:checked').val() == undefined){
+                setTip($('input[name = game-story]'));
+                check = false;
+            }
+            break;
+            case 5:
+            if($('input[name = user-liketype]:checked').val() == undefined){
+                setTip($('input[name = user-liketype]'));
+                check = false;
+            }
+            if($('input[name = user-focus]:checked').val() == undefined){
+                setTip($('#user-focus-1'));
+                check = false;
+            }
+            if($('input[name = user-focus]')[$('input[name = user-focus]').length - 1].checked && $('input[name = user-focus-other]').val() == ''){
+                setTip($('input[name = user-focus-other]'));
+                check = false;
+            }
+            break;
+        default:
+            check = true;
+            break;
+    }
+    return check;
+    
+}
+
+
+function setTip(dom) {
+	let template = $('#tipTemplate').html();
+	if(dom.closest('.tip-check').find('.tip').length == 0){
+		dom.closest('.tip-check').append(template);
+		dom.closest('.tip-check').addClass('bdr');
+	}
+    
+}
+
+
+function removeTip(dom){
+	dom.closest('.tip-check').find('.tip').remove();
+	dom.closest('.tip-check').removeClass('bdr');
+}
