@@ -6,25 +6,12 @@ let lastPageNum = 1;
 
 $(document).ready(function() {    
     setProgress();
-    setSendBtn();
+    setBtnActive();
     setPageImage(1);
     BtnFunc();
     activeLoadingAnimation(false);
+    setTextCheck(['input[type=text]']);
 
-    let event_ary = ['input[type=text]'];
-    for(let i=0;i<event_ary.length;i++){
-        $(event_ary[i]).focusout(function(e){
-            if($(this).val() == ''){
-                setTip($(this));
-            }
-        });
-     
-        $(event_ary[i]).keyup(function(e){
-            if($(this).val() != ''){
-               removeTip($(this));
-            }
-        });
-    }
     $('input[type=radio]').change(function(e) {
         removeTip($(this));
     });
@@ -34,6 +21,7 @@ $(document).ready(function() {
     $('input[type=checkbox]').change(function(e) {
         removeTip($(this));
     });
+
 });
 
 
@@ -51,9 +39,6 @@ function BtnFunc(){
     $('.btn-next').click(function(event) {
         switchArticle(1);
     });
-    
-    articleNum == 1 ? $('.btn-prev').hide() : $('.btn-prev').show();
-    articleNum >= pageNum-1 ? $('.btn-next').hide() : $('.btn-next').show();
 }
 
 
@@ -81,11 +66,9 @@ function switchArticle(action){
         });
         articleNumDirty = false;
     }
-    articleNum == 1 ? $('.btn-prev').hide() : $('.btn-prev').show();
-    articleNum >= pageNum-1 ? $('.btn-next').hide() : $('.btn-next').show();
 
     setProgress();
-    setSendBtn();
+    setBtnActive();
 }
 
 
@@ -125,9 +108,14 @@ function setProgress() {
 }
 
 
-function setSendBtn(){
-    if(articleNum == pageNum - 1) $('.btn-send').show();
-    else $('.btn-send').hide();
+function setBtnActive(){    
+    articleNum == 1 || articleNum == pageNum ? $('.btn-prev').hide() : $('.btn-prev').show();
+    articleNum >= pageNum-1 ? $('.btn-next').hide() : $('.btn-next').show();
+
+    articleNum == pageNum - 1 ? $('.btn-send').show() : $('.btn-send').hide();
+
+    articleNum == pageNum ? $('.btn-home').show() : $('.btn-home').hide();
+    articleNum == pageNum ?  $('.btn-data').show() :  $('.btn-data').hide();
 }
 
 
@@ -151,9 +139,7 @@ function switchToLastPage(){
         x: 0
     });
     setProgress();
-    $('.btn-prev').hide();
-    $('.btn-send').hide();
-    $('.btn-next').hide();
+    setBtnActive();
 }
 
 
@@ -221,6 +207,23 @@ getRadioVal = (name) => $(`input[name = ${name}]:checked`).val();
 getTextAreaVal = (name) => $(`textarea[name = ${name}]`).val()
 
 
+function setTextCheck(event_ary){
+    for(let i=0;i<event_ary.length;i++){
+        $(event_ary[i]).focusout(function(e){
+            if($(this).val() == ''){
+                setTip($(this));
+            }
+        });
+     
+        $(event_ary[i]).keyup(function(e){
+            if($(this).val() != ''){
+               removeTip($(this));
+            }
+        });
+    }
+}
+
+
 function checkField(pn) {
     let check = true;
     switch(pn) {
@@ -231,6 +234,10 @@ function checkField(pn) {
                     check = false;
                 }
             });
+            if($('input[name = user-email]').val() == ''){
+                setTip($('input[name = user-email]'));
+                check = false;
+            }
             break;
         case 3:
             if($('input[name = game-getinfo]:checked').val() == undefined){

@@ -1,0 +1,71 @@
+
+body {
+    font-size: 14px;
+}
+
+.col-index {
+    min-width: 1rem;
+}
+
+.col-gender {
+    min-width: 3.8rem;
+}
+
+.col-age {
+    min-width: 6.5rem;
+}
+
+.col-email {
+    min-width: 8rem;
+}
+
+.col-getinfo {
+    min-width: 9rem;
+}
+
+.col-attract {
+    min-width: 3rem;
+}
+
+.col-system {
+    min-width: 3rem;
+}
+
+.col-character {
+    min-width: 3rem;
+}
+
+.col-art {
+    min-width: 3rem;
+}
+
+.col-world {
+    min-width: 3rem;
+}
+
+.col-play {
+    min-width: 3rem;
+}
+
+.col-music {
+    min-width: 3rem;
+}
+
+.col-story {
+    min-width: 3rem;
+}   
+
+.col-type {
+    min-width: 3rem;
+}
+
+.col-focus {
+    min-width: 3rem;
+}
+.col-opinion {
+    width: 3rem;
+}
+
+.col-advice {
+    width: 3rem;
+}
